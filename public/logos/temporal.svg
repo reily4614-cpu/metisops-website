@@ -1,1 +1,6 @@
-Host not in allowlist: metisosai-e5gny2ekw.vercel.app. Add this host to your network egress settings to allow access.
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+<rect x="20" y="20" width="30" height="30" fill="#0ea5e9" rx="2"/>
+<rect x="50" y="20" width="30" height="30" fill="#0ea5e9" rx="2"/>
+<rect x="20" y="50" width="30" height="30" fill="#0ea5e9" rx="2"/>
+<rect x="50" y="50" width="30" height="30" fill="#0ea5e9" rx="2"/>
+</svg>
