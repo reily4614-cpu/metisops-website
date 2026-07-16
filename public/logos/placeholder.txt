@@ -1,0 +1,23 @@
+This folder contains logo SVG files for:
+- openai.svg
+- anthropic.svg
+- gemini.svg
+- meta-llama.svg
+- mistral.svg
+- cohere.svg
+- langchain.svg
+- langgraph.svg
+- llamaindex.svg
+- huggingface.svg
+- mcp.svg
+- n8n.svg
+- temporal.svg
+- airflow.svg
+- pinecone.svg
+- weaviate.svg
+- qdrant.svg
+- salesforce.svg
+- sharepoint.svg
+- sap.svg
+- slack.svg
+- postgresql.svg
