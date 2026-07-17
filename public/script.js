@@ -1,6 +1,7 @@
 const canvas = document.getElementById("network");
 const ctx = canvas.getContext("2d");
 let w, h, pts;
+
 function resize() {
   w = canvas.width = innerWidth * devicePixelRatio;
   h = canvas.height = innerHeight * devicePixelRatio;
@@ -15,6 +16,7 @@ function resize() {
 }
 resize();
 addEventListener("resize", resize);
+
 function draw() {
   ctx.clearRect(0, 0, w, h);
   pts.forEach(p => {
@@ -39,6 +41,8 @@ function draw() {
   requestAnimationFrame(draw);
 }
 draw();
+
+// Duplicate marquee tracks for a seamless infinite loop (skipped when reduced motion is preferred)
 const prefersReducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
 if (!prefersReducedMotion) {
   document.querySelectorAll(".tech-track").forEach(track => {
@@ -51,24 +55,31 @@ if (!prefersReducedMotion) {
     });
   });
 }
+
 const io = new IntersectionObserver(entries => {
   entries.forEach(e => { if (e.isIntersecting) e.target.classList.add("visible"); });
 }, { threshold: .13 });
 document.querySelectorAll(".reveal").forEach(el => io.observe(el));
+
 const WEB3FORMS_ACCESS_KEY = "4bafc66e-62e5-4a9d-a44e-0da53c75b2e0";
+
 document.getElementById("contactForm").addEventListener("submit", async (e) => {
   e.preventDefault();
+
   const form = e.target;
   const btn = form.querySelector("button");
   const original = btn.textContent;
+
   btn.disabled = true;
   btn.textContent = "Sending…";
+
   const payload = {
     access_key: WEB3FORMS_ACCESS_KEY,
-    subject: "New MetisOps inquiry",
-    from_name: "MetisOps Website",
+    subject: "New MetisOS inquiry",
+    from_name: "MetisOS Website",
     ...Object.fromEntries(new FormData(form).entries()),
   };
+
   try {
     const res = await fetch("https://api.web3forms.com/submit", {
       method: "POST",
@@ -76,6 +87,7 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
       body: JSON.stringify(payload),
     });
     const data = await res.json();
+
     if (data.success) {
       form.reset();
       btn.textContent = "Sent ✓";

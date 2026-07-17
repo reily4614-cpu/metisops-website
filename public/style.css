@@ -190,6 +190,7 @@ h1 span,h2 span{color:var(--gold2)}
   overflow:hidden;
   transition:border-color .3s ease, background .3s ease, transform .3s ease;
 }
+/* soft gradient glow behind each logo */
 .tech-logo::before{
   content:"";
   position:absolute;inset:0;
@@ -223,6 +224,7 @@ h1 span,h2 span{color:var(--gold2)}
 }
 .tech-logo:hover::before{opacity:1;background:radial-gradient(circle at 50% 40%,rgba(214,162,74,.22),transparent 72%)}
 .tech-logo:hover img{filter:none;opacity:1}
+/* monochrome (white) brand marks need to go dark on the light hover panel */
 .tech-logo:hover img.on-light-dark{filter:brightness(0)}
 .tech-logo:hover .tech-word{color:var(--gold)}
 
