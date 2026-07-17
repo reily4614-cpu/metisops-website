@@ -75,8 +75,8 @@ document.getElementById("contactForm").addEventListener("submit", async (e) => {
 
   const payload = {
     access_key: WEB3FORMS_ACCESS_KEY,
-    subject: "New MetisOS inquiry",
-    from_name: "MetisOS Website",
+    subject: "New MetisOps inquiry",
+    from_name: "MetisOps Website",
     ...Object.fromEntries(new FormData(form).entries()),
   };
 
